@@ -8,5 +8,5 @@ uint8 CurrentArray[100] = {4,5};
 
 TEST_CASE("To give 4,5 as input and expect 4-5, 2 as output") 
 {
-  REQUIRE(strcmp(NumberOfReadingsInRange(uint8* CurrentArray, uint8 SizeOfCurrentArray)(CurrentArray, 2), "4-5, 2"));
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 2), "4-5, 2"));
 }
