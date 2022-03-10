@@ -4,7 +4,7 @@
 #include <string.h>
 #include "BatteryChargeAnalyser.h"
 
-uint8 CurrentArray[100] = {4,5};
+unsigned int CurrentArray[100] = {4,5};
 
 TEST_CASE("To give 4,5 as input and expect 4-5, 2 as output") 
 {
