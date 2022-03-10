@@ -1,6 +1,6 @@
 #include "BatteryChargeAnalyser.h"
 
-char* NumberOfReadingsInRange(uint8* CurrentArray, uint8 SizeOfCurrentArray)
+char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   return "4-5, 2";
 }
