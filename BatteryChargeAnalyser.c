@@ -2,19 +2,19 @@
 
 static char printchar[100];
 
-void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int CurrentArray)
+void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray)
 {
   *MinVal = 4;
   *MaxVal = 6;
   return;
 }
 
-unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int CurrentArray)
+unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray)
 {
   return 3; 
 }
 
-void getstringFromValues(MinVal, MaxVal, NumOfOccurence)
+void getstringFromValues(int MinVal, int MaxVal, unsigned int NumOfOccurence)
 {
   sprintf(printchar, "%d-%d, %d", MinVal, MaxVal, NumOfOccurence);
 }
