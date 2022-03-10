@@ -1,5 +1,6 @@
 #pragma once
 #include <string.h>
+#include <stdio.h>
 
 void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray);
 unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray);
