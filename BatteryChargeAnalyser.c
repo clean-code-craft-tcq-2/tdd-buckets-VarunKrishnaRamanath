@@ -2,14 +2,14 @@
 
 static char printchar[100];
 
-void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray)
+void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   *MinVal = 4;
   *MaxVal = 6;
   return;
 }
 
-unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray)
+unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   return 3; 
 }
