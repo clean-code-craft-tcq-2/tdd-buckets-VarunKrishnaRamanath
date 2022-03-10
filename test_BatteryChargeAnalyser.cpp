@@ -3,7 +3,9 @@
 #include "test/catch.hpp"
 #include "BatteryChargeAnalyser.h"
 
-TEST_CASE("Blank test") 
+uint8 CurrentArray[100] = {4,5};
+
+TEST_CASE("To give 4,5 as input and expect 4-5, 2 as output") 
 {
-  REQUIRE(1 == 1);
+  REQUIRE(CurrentOccurenceInRange(CurrentArray, 2), "4-5, 2");
 }
