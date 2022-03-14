@@ -21,7 +21,7 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   REQUIRE(MaxVal == 6);
   
   unsigned int TempArray[100];
-  SizeOfConsecutiveArray;
+  unsigned int SizeOfConsecutiveArray;
   getConsecutiveArray(TempArray, &SizeOfConsecutiveArray, CurrentArray, 3);
   REQUIRE(TempArray[0] == 4);
   REQUIRE(TempArray[1] == 5);
