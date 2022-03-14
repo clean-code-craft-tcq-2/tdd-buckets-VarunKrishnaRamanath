@@ -8,7 +8,7 @@ void getConsecutiveArray(unsigned int* ConsecutiveArray, unsigned int* SizeOfCon
   ConsecutiveArray[1] = 5;
   ConsecutiveArray[2] = 6;
  
-  SizeOfConsecutiveArray = 3;
+  *SizeOfConsecutiveArray = 3;
   
   return; 
 }
