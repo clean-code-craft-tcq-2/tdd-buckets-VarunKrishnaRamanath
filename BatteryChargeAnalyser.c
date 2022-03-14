@@ -19,24 +19,19 @@ unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfC
 
 unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
-  return 6;
-}
-
-void getConsecutiveArray(unsigned int* ConsecutiveArray, unsigned int* SizeOfConsecutiveArray, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
-{
-  unsigned int count = 0;
+   unsigned int count = 0;
+   unsigned int MaxConsecutiveValue = MinVal;
   
-  unsigned int MinVal = getMinOfGivenArray(CurrentArray, SizeOfCurrentArray);
-  unsigned int MaxVal = getMaxConsecutiveOfGivenArray(MinVal, CurrentArray, SizeOfCurrentArray);
+  //assume that array is sorted
+   for(count = MinVal; count < SizeOfCurrentArray; count++)
+   {
+     if(MaxConsecutiveValue + 1 == CurrentArray[count])
+     {
+       MaxConsecutiveValue = CurrentArray[count];
+     }
+   }
   
-  for(count = MinVal; count <= MaxVal; count++)
-  {
-    ConsecutiveArray[count - MinVal] = count;
-  }
- 
-  *SizeOfConsecutiveArray = MaxVal - MinVal + 1;
-  
-  return; 
+  return MaxConsecutiveValue;
 }
 
 void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
@@ -48,11 +43,9 @@ void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* Curren
  
  memset(TempArray, 0, sizeof(TempArray));
  
- getConsecutiveArray(TempArray, &SizeOfConsecutiveArray, CurrentArray, SizeOfCurrentArray);
- //getMinMaxOfConsecutiveArray();
- 
-  *MinVal = TempArray[0];
-  *MaxVal = TempArray[SizeOfConsecutiveArray-1];
+ *MinVal = getMinOfGivenArray(CurrentArray, SizeOfCurrentArray);
+ *MaxVal = getMaxConsecutiveOfGivenArray(MinVal, CurrentArray, SizeOfCurrentArray);
+  
   return;
 }
 
@@ -72,6 +65,10 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
   unsigned int NumOfOccurence = 0;
   
   getConsecutiveRangeFromArray(&MinVal, &MaxVal, CurrentArray, SizeOfCurrentArray);
+  if(MinVal == MaxVal)
+  {
+    strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
+  }
   NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
   getstringFromValues(MinVal, MaxVal, NumOfOccurence);
   
