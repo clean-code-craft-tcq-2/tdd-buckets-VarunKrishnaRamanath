@@ -19,4 +19,12 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   getConsecutiveRangeFromArray(&MinVal, &MaxVal, CurrentArray, 3);
   REQUIRE(MinVal == 4);
   REQUIRE(MaxVal == 6);
+  
+  TempArray[100];
+  SizeOfConsecutiveArray;
+  getConsecutiveArray(TempArray, &SizeOfConsecutiveArray, CurrentArray, 3);
+  REQUIRE(TempArray[0] == 4);
+  REQUIRE(TempArray[1] == 5);
+  REQUIRE(TempArray[2] == 6);
+  REQUIRE(SizeOfConsecutiveArray == 3);
 }
