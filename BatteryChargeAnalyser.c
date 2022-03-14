@@ -8,7 +8,7 @@ void getConsecutiveArray(unsigned int* ConsecutiveArray, unsigned int* SizeOfCon
   ConsecutiveArray[1] = 5;
   ConsecutiveArray[2] = 6;
  
-  SizeOfConsecutiveArray = 3
+  SizeOfConsecutiveArray = 3;
   
   return; 
 }
@@ -18,7 +18,7 @@ void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* Curren
  unsigned int count = 0;
  unsigned int NumOfConsecutiveArray = 0;
  unsigned int SizeOfConsecutiveArray = 0;
- int TempArray[100];
+ unsigned int TempArray[100];
  
  memset(TempArray, 0, sizeof(TempArray));
  
