@@ -20,14 +20,6 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   REQUIRE(MinVal == 4);
   REQUIRE(MaxVal == 6);
   
-  unsigned int TempArray[100];
-  unsigned int SizeOfConsecutiveArray;
-  getConsecutiveArray(TempArray, &SizeOfConsecutiveArray, CurrentArray, 3);
-  REQUIRE(TempArray[0] == 4);
-  REQUIRE(TempArray[1] == 5);
-  REQUIRE(TempArray[2] == 6);
-  REQUIRE(SizeOfConsecutiveArray == 3);
-  
   unsigned int TempArray2[3] = {4, 5, 6};
   REQUIRE(getMinOfGivenArray(TempArray2, 3) == 4);
   REQUIRE(getMaxConsecutiveOfGivenArray(getMinOfGivenArray(TempArray2, 3), TempArray2, 3) == 6);
