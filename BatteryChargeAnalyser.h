@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdio.h>
 
+void getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
+unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 void getConsecutiveArray(unsigned int* ConsecutiveArray, unsigned int* SizeOfConsecutiveArray, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
