@@ -2,13 +2,39 @@
 
 static char printchar[100];
 
+unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
+{
+  unsigned int count = 0;
+  unsigned int MinVal = 0xffffffffu;
+  for(count = 0; count < SizeOfCurrentArray; count++)
+  {
+    if(CurrentArray[count] < MinVal)
+    {
+     MinVal = CurrentArray[count]; 
+    }
+  }
+  
+  return MinVal;
+}
+
+unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
+{
+  return 6;
+}
+
 void getConsecutiveArray(unsigned int* ConsecutiveArray, unsigned int* SizeOfConsecutiveArray, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
-  ConsecutiveArray[0] = 4;
-  ConsecutiveArray[1] = 5;
-  ConsecutiveArray[2] = 6;
+  unsigned int count = 0;
+  
+  unsigned int MinVal = getMinOfGivenArray(CurrentArray, SizeOfCurrentArray);
+  unsigned int MaxVal = getMaxConsecutiveOfGivenArray(MinVal, CurrentArray, SizeOfCurrentArray);
+  
+  for(count = MinVal; count <= MaxVal; count++)
+  {
+    ConsecutiveArray[count - MinVal] = count;
+  }
  
-  *SizeOfConsecutiveArray = 3;
+  *SizeOfConsecutiveArray = MaxVal - MinVal + 1;
   
   return; 
 }
