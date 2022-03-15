@@ -8,7 +8,7 @@ void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, u
   unsigned int count = 0;
   unsigned int TempVar = 0;
   
-  memcpy(SortedArray, CurrentArray, SizeOfCurrentArray);
+  memcpy(SortedArray, CurrentArray, (SizeOfCurrentArray*sizeof(unsigned int)));
   
   while(SortSize>1)
   {
