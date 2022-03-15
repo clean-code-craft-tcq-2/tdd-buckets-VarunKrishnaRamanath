@@ -49,7 +49,7 @@ TEST_CASE("To give 6,7,6,5,4 as input and expect 4-7, 5 as output") // input shu
   REQUIRE(Num2 == 4);
   
   sortArrayAscending(CurrentArray,SortedArray,SIZEOFARRAY(expectedSortedArray));
-   REQUIRE(memcmp(SortedArray,expectedSortedArray,SIZEOFARRAY(expectedSortedArray)) == 1);
+   REQUIRE(memcmp(SortedArray,expectedSortedArray,SIZEOFARRAY(expectedSortedArray)) == 0);
    
    REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
 }
