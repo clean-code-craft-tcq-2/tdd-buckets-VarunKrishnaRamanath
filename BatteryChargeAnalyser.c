@@ -4,7 +4,25 @@ static char printchar[100];
 
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray)
 {
+  unsigned int SortSize = SizeOfCurrentArray;
+  unsigned int count = 0;
+  unsigned int TempVar = 0;
   
+  memcpy(SortedArray, CurrentArray, SizeOfCurrentArray);
+  
+  while(SortSize>1)
+  {
+     for(count = 0; count < SortSize-1; count++)
+     {
+       if(SortedArray[count] > SortedArray[count+1])
+       {
+         TempVar = SortedArray[count];
+         SortedArray[count] = SortedArray[count+1];
+         SortedArray[count+1] = TempVar;
+       }
+     }
+     SortSize--;
+  }
 }
 
 unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
