@@ -6,7 +6,7 @@ void swapIfGreater(unsigned int* Num1, unsigned int* Num2)
 {
   unsigned int TempVar = 0;
   
-  if(Num1 > Num2)
+  if(*Num1 > *Num2)
    {
      TempVar = *Num1;
      *Num1 = *Num2;
