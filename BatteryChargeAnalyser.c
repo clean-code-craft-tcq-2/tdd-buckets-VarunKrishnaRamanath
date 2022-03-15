@@ -59,7 +59,7 @@ void getMinMaxConsecutiveOfGivenArray(unsigned int* MinVal, unsigned int* MaxVal
   return;
 }
 
-void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
+void getConsecutiveRangeFromArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
  unsigned int count = 0;
  unsigned int NumOfConsecutiveArray = 0;
@@ -73,7 +73,7 @@ void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* Curren
   return;
 }
 
-unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
+unsigned int getNumberOfOccurencesFromRange(unsigned int MinVal, unsigned int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   unsigned int count = 0;
   unsigned int NumofOccurences = 0;
@@ -88,14 +88,14 @@ unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int
   return NumofOccurences; 
 }
 
-void getstringFromValues(int MinVal, int MaxVal, unsigned int NumOfOccurence)
+void getstringFromValues(unsigned int MinVal, unsigned int MaxVal, unsigned int NumOfOccurence)
 {
   sprintf(printchar, "%d-%d, %d", MinVal, MaxVal, NumOfOccurence);
 }
 
 char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
-  int MinVal, MaxVal = 0;
+  unsigned int MinVal, MaxVal = 0;
   unsigned int NumOfOccurence = 0;
   unsigned int SortedArray[100];
   
