@@ -1,5 +1,6 @@
 #pragma once
 #include <string.h>
+#include <bool.h>
 #include <stdio.h>
 
 unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
@@ -10,3 +11,14 @@ unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int
 void getstringFromValues(int MinVal, int MaxVal, unsigned int NumOfOccurence);
 
 char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
+
+static inline bool CheckWithinRange(unsigned int value, unsigned int MinVal, unsigned int MaxVal)
+{
+  WithinRange = false;
+  if((value >= MinVal)&&(value <= MaxVal))
+  {
+    WithinRange = true;
+  }
+  
+  return WithinRange;
+}
