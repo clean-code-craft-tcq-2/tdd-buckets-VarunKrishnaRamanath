@@ -23,4 +23,17 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   unsigned int TempArray2[3] = {4, 5, 6};
   REQUIRE(getMinOfGivenArray(TempArray2, 3) == 4);
   REQUIRE(getMaxConsecutiveOfGivenArray(getMinOfGivenArray(TempArray2, 3), TempArray2, 3) == 6);
+  
+}
+
+TEST_CASE("To give 4,5,6,6,7 as input and expect 4-7, 5 as output") 
+{
+  unsigned int CurrentArray[] = {4,5,6,6,7};
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 5), "4-7, 5\n"));
+}
+
+TEST_CASE("To give array of non consecutive numbers and expect error output")
+{
+  unsigned int CurrentArray[] = {1,3,5,7,9};
+  REQUIRE(strstr(NumberOfReadingsInRange(CurrentArray, 5), "Error"));
 }
