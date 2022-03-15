@@ -18,7 +18,7 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   unsigned int CurrentArray[] = {4,5,6};
   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 3), "4-6, 3") == 0);
   
-  int MinVal, MaxVal = 0;
+  unsigned int MinVal, MaxVal = 0;
   getConsecutiveRangeFromArray(&MinVal, &MaxVal, CurrentArray, 3);
   REQUIRE(MinVal == 4);
   REQUIRE(MaxVal == 6);
