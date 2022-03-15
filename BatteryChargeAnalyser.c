@@ -25,7 +25,7 @@ void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, u
   {
      for(count = 0; count < SortSize-1; count++)
      {
-       swapIfGreater(SortedArray[count], SortedArray[count+1]);
+       swapIfGreater(&SortedArray[count], &SortedArray[count+1]);
      }
      SortSize--;
   }
