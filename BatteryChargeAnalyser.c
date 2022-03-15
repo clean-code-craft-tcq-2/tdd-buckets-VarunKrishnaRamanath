@@ -2,11 +2,22 @@
 
 static char printchar[100];
 
+void swapIfGreater(unsigned int* Num1, unsigned int* Num2)
+{
+  unsigned int TempVar = 0;
+  
+  if(Num1 > Num2)
+   {
+     TempVar = *Num1;
+     *Num1 = *Num2;
+     *Num2 = TempVar;
+   }
+}
+
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray)
 {
   unsigned int SortSize = SizeOfCurrentArray;
   unsigned int count = 0;
-  unsigned int TempVar = 0;
   
   memcpy(SortedArray, CurrentArray, (SizeOfCurrentArray*sizeof(unsigned int)));
   
@@ -14,12 +25,7 @@ void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, u
   {
      for(count = 0; count < SortSize-1; count++)
      {
-       if(SortedArray[count] > SortedArray[count+1])
-       {
-         TempVar = SortedArray[count];
-         SortedArray[count] = SortedArray[count+1];
-         SortedArray[count+1] = TempVar;
-       }
+       swapIfGreater(SortedArray[count], SortedArray[count+1]);
      }
      SortSize--;
   }
