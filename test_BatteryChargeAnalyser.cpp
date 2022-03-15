@@ -41,6 +41,12 @@ TEST_CASE("To give 6,7,6,5,4 as input and expect 4-7, 5 as output") // input shu
   unsigned int CurrentArray[] = {6,7,6,5,4};
   unsigned int SortedArray[5];
   unsigned int expectedSortedArray[5] = {4,5,6,6,7};
+  unsigned int Num1 = 4;
+  unsigned int Num2 = 3;
+  
+  swapIfGreater(&Num1, &Num2);
+  REQUIRE(Num1 == 3);
+  REQUIRE(Num2 == 4);
   
   sortArrayAscending(CurrentArray,SortedArray,SIZEOFARRAY(expectedSortedArray));
    REQUIRE(memcmp(SortedArray,expectedSortedArray,SIZEOFARRAY(expectedSortedArray)) == 1);
