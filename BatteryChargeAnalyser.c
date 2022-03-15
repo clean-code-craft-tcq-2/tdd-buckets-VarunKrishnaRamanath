@@ -56,7 +56,7 @@ unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int
   
   for(count = 0; count < SizeOfCurrentArray; count++)
   {
-    if((CurrentArray[count] >= MinVal)&&(CurrentArray[count] <= MaxVal))
+    if(CheckWithinRange(CurrentArray[count], MinVal, MaxVal))
     {
       NumofOccurences++;
     }
