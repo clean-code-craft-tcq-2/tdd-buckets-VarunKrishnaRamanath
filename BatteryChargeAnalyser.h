@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+void swapIfGreater(unsigned int* Num1, unsigned int* Num2);
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray);
 unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
