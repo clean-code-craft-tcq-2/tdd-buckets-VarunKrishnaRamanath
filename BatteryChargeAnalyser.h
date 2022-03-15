@@ -14,7 +14,7 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
 
 static inline bool CheckWithinRange(unsigned int value, unsigned int MinVal, unsigned int MaxVal)
 {
-  WithinRange = false;
+  bool WithinRange = false;
   if((value >= MinVal)&&(value <= MaxVal))
   {
     WithinRange = true;
