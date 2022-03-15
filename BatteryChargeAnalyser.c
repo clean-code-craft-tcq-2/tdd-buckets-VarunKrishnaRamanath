@@ -31,36 +31,32 @@ void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, u
   }
 }
 
-unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
-{
-  unsigned int count = 0;
-  unsigned int MinVal = 0xffffffffu;
-  for(count = 0; count < SizeOfCurrentArray; count++)
-  {
-    if(CurrentArray[count] < MinVal)
-    {
-     MinVal = CurrentArray[count]; 
-    }
-  }
-  
-  return MinVal;
-}
-
-unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
+void getMinMaxConsecutiveOfGivenArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
    unsigned int count = 0;
-   unsigned int MaxConsecutiveValue = MinVal;
+   *MaxVal = CurrentArray[0];
+   *MinVal = CurrentArray[0];
   
   //assume that array is sorted
-   for(count = 0; count < SizeOfCurrentArray; count++)
+   for(count = 0; count < (SizeOfCurrentArray - 1); count++)
    {
-     if(MaxConsecutiveValue + 1 == CurrentArray[count])
+     if(*MaxVal + 1 == CurrentArray[count+1])
      {
-       MaxConsecutiveValue = CurrentArray[count];
+       *MaxVal = CurrentArray[count+1];
      }
+     else if(*MaxVal == *MinVal)
+     {
+         *MaxVal = CurrentArray[count+1];
+         *MinVal = *MaxVal;
+     }
+     else
+     {
+         
+     }
+     
    }
   
-  return MaxConsecutiveValue;
+  return;
 }
 
 void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
@@ -72,7 +68,7 @@ void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* Curren
  
  memset(TempArray, 0, sizeof(TempArray));
  
- *MinVal = getMinOfGivenArray(CurrentArray, SizeOfCurrentArray);
+ *MinVal = CurrentArray[0];
  *MaxVal = getMaxConsecutiveOfGivenArray(*MinVal, CurrentArray, SizeOfCurrentArray);
   
   return;
