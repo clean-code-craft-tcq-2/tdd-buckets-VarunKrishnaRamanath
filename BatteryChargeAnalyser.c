@@ -2,6 +2,11 @@
 
 static char printchar[100];
 
+void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray)
+{
+  
+}
+
 unsigned int getMinOfGivenArray(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   unsigned int count = 0;
