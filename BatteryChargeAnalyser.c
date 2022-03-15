@@ -96,8 +96,10 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
 {
   int MinVal, MaxVal = 0;
   unsigned int NumOfOccurence = 0;
+  unsigned int SortedArray[100];
   
-  getConsecutiveRangeFromArray(&MinVal, &MaxVal, CurrentArray, SizeOfCurrentArray);
+  sortArrayAscending(CurrentArray, SortedArray, SizeOfCurrentArray);
+  getConsecutiveRangeFromArray(&MinVal, &MaxVal, SortedArray, SizeOfCurrentArray);
   if(MinVal == MaxVal)
   {
     strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
