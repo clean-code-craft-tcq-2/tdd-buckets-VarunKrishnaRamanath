@@ -68,7 +68,7 @@ void getConsecutiveRangeFromArray(unsigned int* MinVal, unsigned int* MaxVal, un
  
  memset(TempArray, 0, sizeof(TempArray));
  
- getMinMaxConsecutiveOfGivenArray(*MinVal, *MaxVal, CurrentArray, SizeOfCurrentArray);
+ getMinMaxConsecutiveOfGivenArray(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
   
   return;
 }
