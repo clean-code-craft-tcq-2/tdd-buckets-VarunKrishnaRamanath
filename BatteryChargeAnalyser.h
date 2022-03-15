@@ -1,6 +1,6 @@
 #pragma once
 #include <string.h>
-#include <bool.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
