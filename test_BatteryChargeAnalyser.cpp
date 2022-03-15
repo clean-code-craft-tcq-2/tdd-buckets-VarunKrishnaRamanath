@@ -36,10 +36,14 @@ TEST_CASE("To give 4,5,6,6,7 as input and expect 4-7, 5 as output") //input in a
   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
 }
 
-TEST_CASE("To give 7,6,6,5,4 as input and expect 4-7, 5 as output") // input shuffled
+TEST_CASE("To give 6,7,6,5,4 as input and expect 4-7, 5 as output") // input shuffled
 {
-  unsigned int CurrentArray[] = {7,6,6,5,4};
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
+  unsigned int CurrentArray[] = {6,7,6,5,4};
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);.
+    
+  unsigned int SortedArray[5];
+  unsigned int expectedSortedArray[5] = {4,5,6,6,7};
+   REQUIRE(memcmp(SortedArray,expectedSortedArray,SIZEOFARRAY(expectedSortedArray)) == 1);
 }
 
 TEST_CASE("To give array of non consecutive numbers and expect error output") // non consecutive data present
