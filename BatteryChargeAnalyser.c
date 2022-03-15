@@ -23,7 +23,7 @@ unsigned int getMaxConsecutiveOfGivenArray(unsigned int MinVal, unsigned int* Cu
    unsigned int MaxConsecutiveValue = MinVal;
   
   //assume that array is sorted
-   for(count = MinVal; count < SizeOfCurrentArray; count++)
+   for(count = 0; count < SizeOfCurrentArray; count++)
    {
      if(MaxConsecutiveValue + 1 == CurrentArray[count])
      {
