@@ -51,7 +51,17 @@ void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* Curren
 
 unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
-  return 3; 
+  unsigned int count = 0;
+  unsigned int NumofOccurences = 0;
+  
+  for(count = 0; count < SizeOfCurrentArray; count++)
+  {
+    if((CurrentArray[count] >= MinVal)&&(CurrentArray[count] <= MaxVal))
+    {
+      NumofOccurences++;
+    }
+  }
+  return NumofOccurences; 
 }
 
 void getstringFromValues(int MinVal, int MaxVal, unsigned int NumOfOccurence)
@@ -69,8 +79,11 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
   {
     strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
   }
-  NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
-  getstringFromValues(MinVal, MaxVal, NumOfOccurence);
+  else
+  {
+    NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
+    getstringFromValues(MinVal, MaxVal, NumOfOccurence);
+  }
   
   return printchar;
 }
