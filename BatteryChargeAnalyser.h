@@ -6,9 +6,9 @@
 void swapIfGreater(unsigned int* Num1, unsigned int* Num2);
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray);
 void getMinMaxConsecutiveOfGivenArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
-void getConsecutiveRangeFromArray(int* MinVal, int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
-unsigned int getNumberOfOccurencesFromRange(int MinVal, int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
-void getstringFromValues(int MinVal, int MaxVal, unsigned int NumOfOccurence);
+void getConsecutiveRangeFromArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
+unsigned int getNumberOfOccurencesFromRange(unsigned int MinVal, unsigned int MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
+void getstringFromValues(unsigned int MinVal, unsigned int MaxVal, unsigned int NumOfOccurence);
 
 char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 
