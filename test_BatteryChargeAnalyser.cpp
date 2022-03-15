@@ -38,3 +38,15 @@ TEST_CASE("To give array of non consecutive numbers and expect error output")
   unsigned int CurrentArray[] = {1,3,5,7,9};
   REQUIRE(strstr(NumberOfReadingsInRange(CurrentArray, 5), "Error"));
 }
+
+TEST_CASE("To give 4,5,6,6,7,9 as input and expect 4-7, 5 as output") 
+{
+  unsigned int CurrentArray[] = {4,5,6,6,7,9};
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 5), "4-7, 5\n"));
+}
+
+TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as output") 
+{
+  unsigned int CurrentArray[] = {4,5,6,6,8,9,10};
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 5), "4-6, 4\n8-10,3\n"));
+}
