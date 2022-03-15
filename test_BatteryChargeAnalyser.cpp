@@ -24,7 +24,7 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   REQUIRE(getMinOfGivenArray(TempArray2, 3) == 4);
   REQUIRE(getMaxConsecutiveOfGivenArray(getMinOfGivenArray(TempArray2, 3), TempArray2, 3) == 6);
   
-  REQUIRE(CheckWithinRange(5,4,6) == true)
+  REQUIRE(CheckWithinRange(5,4,6) == true);
 }
 
 TEST_CASE("To give 4,5,6,6,7 as input and expect 4-7, 5 as output") 
