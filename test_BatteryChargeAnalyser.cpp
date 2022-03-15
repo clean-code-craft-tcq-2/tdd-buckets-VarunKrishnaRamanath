@@ -23,10 +23,11 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   REQUIRE(MinVal == 4);
   REQUIRE(MaxVal == 6);
   
-  unsigned int TempArray2[4] = {2, 4, 5, 6};
-  getMinMaxConsecutiveOfGivenArray(&MinVal, &MaxVal, TempArray2, SIZEOFARRAY(TempArray2));
-  REQUIRE(MinVal == 4);
-  REQUIRE(MaxVal == 6);
+  unsigned int TempArray2[] = {1,3,4,5,6,8,9};
+  unsigned int MinVal1, MaxVal1 = 0;
+  getMinMaxConsecutiveOfGivenArray(&MinVal1, &MaxVal1, TempArray2, SIZEOFARRAY(TempArray2));
+  REQUIRE(MinVal1 == 3);
+  REQUIRE(MaxVal1 == 6);
   
   REQUIRE(CheckWithinRange(5,4,6) == true);
 }
