@@ -16,7 +16,7 @@ TEST_CASE("To give 4,5 as input and expect 4-5, 2 as output")
 TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output") 
 {
   unsigned int CurrentArray[] = {4,5,6};
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 3), "4-6, 3") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, 3), "4-6, 3\n") == 0);
   
   unsigned int MinVal, MaxVal = 0;
   getConsecutiveRangeFromArray(&MinVal, &MaxVal, CurrentArray, 3);
@@ -35,7 +35,7 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
 TEST_CASE("To give 4,5,6,6,7 as input and expect 4-7, 5 as output") //input in ascending order
 {
   unsigned int CurrentArray[] = {4,5,6,6,7};
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5\n") == 0);
 }
 
 TEST_CASE("To give 6,7,6,5,4 as input and expect 4-7, 5 as output") // input shuffled
@@ -53,7 +53,7 @@ TEST_CASE("To give 6,7,6,5,4 as input and expect 4-7, 5 as output") // input shu
   sortArrayAscending(CurrentArray,SortedArray,SIZEOFARRAY(expectedSortedArray));
    REQUIRE(memcmp(SortedArray,expectedSortedArray,SIZEOFARRAY(expectedSortedArray)) == 0);
    
-   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
+   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5\n") == 0);
 }
 
 TEST_CASE("To give array of non consecutive numbers and expect error output") // non consecutive data present
@@ -65,12 +65,21 @@ TEST_CASE("To give array of non consecutive numbers and expect error output") //
 TEST_CASE("To give 7,5,4,6,7,9 as input and expect 4-7, 5 as output") // non consecutive data laong with consecutive array in input
 {
   unsigned int CurrentArray[] = {7,5,4,6,7,9};
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5\n") == 0);
 }
 
 TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as output") // two consecutive array in input
 {
   unsigned int CurrentArray[] = {4,5,6,6,8,9,10};
-  printf("%s",NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)));
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10,3") == 0);
+  
+  unsigned int TempArray[7];
+  unsigned int RemainingBytes = SIZEOFARRAY(TempArray);
+  memcpy(TempArray, CurrentArray, sizeof(CurrentArray));
+  TrimTheArray(TempArray, &RemainingBytes);
+  REQUIRE(TempArray[0] == 8);
+  REQUIRE(TempArray[1] == 9);
+  REQUIRE(TempArray[2] == 10);
+  REQUIRE(RemainingBytes == 3);
+  
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10,3\n") == 0);
 }
