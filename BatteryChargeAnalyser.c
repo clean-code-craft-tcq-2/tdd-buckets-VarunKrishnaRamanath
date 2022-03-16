@@ -126,6 +126,8 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
   
   do
   {
+    MinVal = 0;
+    MaxVal = 0;
     getConsecutiveRangeFromArray(&MinVal, &MaxVal, SortedArray, SizeOfCurrentArray);
     if(MinVal == MaxVal)
     {
@@ -142,8 +144,6 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
       
       /* Remove the existing range from array to continue searching for more consecutive ranges */
       TrimTheArray(MaxVal, SortedArray, &SizeOfCurrentArray);
-      MinVal = 0;
-      MaxVal = 0;
     }
     
   }while((MinVal != MaxVal) && (SizeOfCurrentArray > 0));
