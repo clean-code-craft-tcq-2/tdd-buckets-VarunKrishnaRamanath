@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 #define SIZEOFARRAY(a)  (sizeof(a)/sizeof(unsigned int))
-/*
+
 TEST_CASE("To give 4,5 as input and expect 4-5, 2 as output") 
 {
   unsigned int CurrentArray[] = {4,5};
@@ -67,7 +67,7 @@ TEST_CASE("To give 7,5,4,6,7,9 as input and expect 4-7, 5 as output") // non con
   unsigned int CurrentArray[] = {7,5,4,6,7,9};
   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-7, 5\n") == 0);
 }
-*/
+
 TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as output") // two consecutive array in input
 {
   unsigned int CurrentArray[] = {4,5,6,6,8,9,10};
@@ -81,5 +81,5 @@ TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as outp
   REQUIRE(TempArray[2] == 10);
   REQUIRE(RemainingBytes == 3);
   
-  //REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10,3\n") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10,3\n") == 0);
 }
