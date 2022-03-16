@@ -29,7 +29,10 @@ TEST_CASE("To give 4,5,6 as input and expect 4-6, 3 as output")
   REQUIRE(MinVal1 == 3);
   REQUIRE(MaxVal1 == 6);
   
-  REQUIRE(CheckWithinRange(5,4,6) == true);
+  REQUIRE(CheckWithinRange(4,4,6) == true);
+  REQUIRE(CheckWithinRange(6,4,6) == true);
+  REQUIRE(CheckWithinRange(3,4,6) == false);
+  REQUIRE(CheckWithinRange(7,4,6) == false);
 }
 
 TEST_CASE("To give 4,5,6,6,7 as input and expect 4-7, 5 as output") //input in ascending order
