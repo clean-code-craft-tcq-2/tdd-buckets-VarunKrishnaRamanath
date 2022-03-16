@@ -1,6 +1,7 @@
 #include "BatteryChargeAnalyser.h"
 
 static char printchar[1000];
+static unsigned int NumOfStringsPrinted = 0;
 
 void swapIfGreater(unsigned int* Num1, unsigned int* Num2)
 {
@@ -111,7 +112,6 @@ unsigned int getNumberOfOccurencesFromRange(unsigned int MinVal, unsigned int Ma
 
 void getstringFromValues(unsigned int MinVal, unsigned int MaxVal, unsigned int NumOfOccurence)
 {
-  static unsigned int NumOfStringsPrinted = 0;
   NumOfStringsPrinted += sprintf(&printchar[NumOfStringsPrinted], "%d-%d, %d\n", MinVal, MaxVal, NumOfOccurence);
 }
 
@@ -121,6 +121,9 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
   unsigned int NumOfOccurence = 0;
   unsigned int NumOfArrayRangesFound = 0;
   unsigned int SortedArray[100];
+  
+  NumOfStringsPrinted = 0;
+  memset(printchar, 0, sizeof(printchar));
   
   sortArrayAscending(CurrentArray, SortedArray, SizeOfCurrentArray);
   
