@@ -111,7 +111,7 @@ unsigned int getNumberOfOccurencesFromRange(unsigned int MinVal, unsigned int Ma
 
 void getstringFromValues(unsigned int MinVal, unsigned int MaxVal, unsigned int NumOfOccurence)
 {
-  static NumOfStringsPrinted = 0;
+  static unsigned int NumOfStringsPrinted = 0;
   NumOfStringsPrinted += sprintf(&printchar[NumOfStringsPrinted], "%d-%d, %d\n", MinVal, MaxVal, NumOfOccurence);
 }
 
