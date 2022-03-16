@@ -84,8 +84,8 @@ TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as outp
   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10, 3\n") == 0);
 }
 
-TEST_CASE("To give 3, 3, 5, 4, 10, 11, 12 as input and expect 3-5, 3 and 10-12, 3 as output") // problem statement in assignment
+TEST_CASE("To give 3, 3, 5, 4, 10, 11, 12 as input and expect 3-5, 4 and 10-12, 3 as output") // problem statement in assignment
 {
   unsigned int CurrentArray[] = {3, 3, 5, 4, 10, 11, 12};
-  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "3-5, 3\n10-12, 3\n") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "3-5, 4\n10-12, 3\n") == 0);
 }
