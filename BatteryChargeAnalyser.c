@@ -143,7 +143,7 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
       MaxVal = 0;
     }
     
-  }while((MinVal != MaxVal) || (SizeOfCurrentArray > 0));
+  }while((MinVal != MaxVal) && (SizeOfCurrentArray > 0));
   
   return printchar;
 }
