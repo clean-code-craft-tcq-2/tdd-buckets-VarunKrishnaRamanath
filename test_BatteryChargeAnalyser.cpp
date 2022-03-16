@@ -75,7 +75,7 @@ TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as outp
   unsigned int TempArray[7];
   unsigned int RemainingBytes = SIZEOFARRAY(TempArray);
   memcpy(TempArray, CurrentArray, sizeof(CurrentArray));
-  TrimTheArray(TempArray, &RemainingBytes);
+  TrimTheArray(6, TempArray, &RemainingBytes);
   REQUIRE(TempArray[0] == 8);
   REQUIRE(TempArray[1] == 9);
   REQUIRE(TempArray[2] == 10);
