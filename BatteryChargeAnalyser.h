@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 void swapIfGreater(unsigned int* Num1, unsigned int* Num2);
+void TrimTheArray(unsigned int* SortedArray, unsigned int* SizeOfCurrentArray);
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray);
 void getMinMaxConsecutiveOfGivenArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
 void getConsecutiveRangeFromArray(unsigned int* MinVal, unsigned int* MaxVal, unsigned int* CurrentArray, unsigned int SizeOfCurrentArray);
