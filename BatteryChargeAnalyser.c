@@ -133,7 +133,7 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
     }
     else
     {
-      NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
+      NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, SortedArray, SizeOfCurrentArray);
       getstringFromValues(MinVal, MaxVal, NumOfOccurence);
       NumOfArrayRangesFound++;
       
