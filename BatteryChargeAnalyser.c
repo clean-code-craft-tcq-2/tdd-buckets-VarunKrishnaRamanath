@@ -127,9 +127,12 @@ char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCur
   do
   {
     getConsecutiveRangeFromArray(&MinVal, &MaxVal, SortedArray, SizeOfCurrentArray);
-    if((MinVal == MaxVal) && (NumOfArrayRangesFound == 0))
+    if(MinVal == MaxVal)
     {
-      strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
+      if(NumOfArrayRangesFound == 0)
+      {
+        strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
+      }
     }
     else
     {
