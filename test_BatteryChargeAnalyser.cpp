@@ -81,5 +81,6 @@ TEST_CASE("To give 4,5,6,6,8,9,10 as input and expect 4-6, 4 and 8-10, 3 as outp
   REQUIRE(TempArray[2] == 10);
   REQUIRE(RemainingBytes == 3);
   
+  printf("%s", NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)));
   REQUIRE(strcmp(NumberOfReadingsInRange(CurrentArray, SIZEOFARRAY(CurrentArray)), "4-6, 4\n8-10,3\n") == 0);
 }
