@@ -1,6 +1,6 @@
 #include "BatteryChargeAnalyser.h"
 
-static char printchar[100];
+static char printchar[1000];
 
 void swapIfGreater(unsigned int* Num1, unsigned int* Num2)
 {
@@ -12,6 +12,27 @@ void swapIfGreater(unsigned int* Num1, unsigned int* Num2)
      *Num1 = *Num2;
      *Num2 = TempVar;
    }
+}
+
+void TrimTheArray(unsigned int MaxVal, unsigned int* SortedArray, unsigned int* SizeOfCurrentArray)
+{
+  unsigned int count, count2 = 0;
+  unsigned int TempArray[100];
+  unsigned int TempSize = *SizeOfCurrentArray;
+  
+  memcpy(TempArray, SortedArray, (TempSize*sizeof(unsigned int)));
+  memset(SortedArray, 0, (TempSize*sizeof(unsigned int)));
+  
+  for(count = 0; count < TempSize; count++)
+  {
+    if(TempArray[count] > MaxVal)
+    {
+      SortedArray[count2] = TempArray[count];
+      count2++;
+    }
+  }
+  
+  *SizeOfCurrentArray = count2;
 }
 
 void sortArrayAscending(unsigned int* CurrentArray, unsigned int* SortedArray, unsigned int SizeOfCurrentArray)
@@ -90,26 +111,39 @@ unsigned int getNumberOfOccurencesFromRange(unsigned int MinVal, unsigned int Ma
 
 void getstringFromValues(unsigned int MinVal, unsigned int MaxVal, unsigned int NumOfOccurence)
 {
-  sprintf(printchar, "%d-%d, %d", MinVal, MaxVal, NumOfOccurence);
+  static NumOfStringsPrinted = 0;
+  NumOfStringsPrinted += sprintf(&printchar[NumOfStringsPrinted], "%d-%d, %d\n", MinVal, MaxVal, NumOfOccurence);
 }
 
 char* NumberOfReadingsInRange(unsigned int* CurrentArray, unsigned int SizeOfCurrentArray)
 {
   unsigned int MinVal, MaxVal = 0;
   unsigned int NumOfOccurence = 0;
+  unsigned int NumOfArrayRangesFound = 0;
   unsigned int SortedArray[100];
   
   sortArrayAscending(CurrentArray, SortedArray, SizeOfCurrentArray);
-  getConsecutiveRangeFromArray(&MinVal, &MaxVal, SortedArray, SizeOfCurrentArray);
-  if(MinVal == MaxVal)
+  
+  do
   {
-    strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
-  }
-  else
-  {
-    NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
-    getstringFromValues(MinVal, MaxVal, NumOfOccurence);
-  }
+    getConsecutiveRangeFromArray(&MinVal, &MaxVal, SortedArray, SizeOfCurrentArray);
+    if((MinVal == MaxVal = 0;) && (NumOfArrayRangesFound == 0))
+    {
+      strcpy(printchar, "Error!! This array doesn't have any consecutive numbers");
+    }
+    else
+    {
+      NumOfOccurence = getNumberOfOccurencesFromRange(MinVal, MaxVal, CurrentArray, SizeOfCurrentArray);
+      getstringFromValues(MinVal, MaxVal, NumOfOccurence);
+      NumOfArrayRangesFound++;
+      
+      /* Remove the existing range from array to continue searching for more consecutive ranges */
+      TrimTheArray(MaxVal, SortedArray, &SizeOfCurrentArray);
+      MinVal = 0;
+      MaxVal = 0;
+    }
+    
+  }while((MinVal != MaxVal) || (SizeOfCurrentArray > 0));
   
   return printchar;
 }
