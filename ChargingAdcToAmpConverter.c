@@ -1,6 +1,6 @@
 #include "ChargingAdcToAmpConverter.h"
 
-#define CONVERT_ADC_TO_AMP(ADCValue)  ((MAX_CURRENT_SENSED_BY_ADC*(ADCValue))/MAX_VALUE_READ_BY_ADC)
+#define CONVERT_ADC_TO_AMP(ADCValue)  ((MAX_CURRENT_SENSED_BY_ADC*(ADCValue))/(float)MAX_VALUE_READ_BY_ADC)
 #define IS_GREATER_THAN_MAX_VALUE(ADCValue)  (ADCValue > MAX_VALUE_READ_BY_ADC)
 
 static int RoundOffToNearestIntegerValue(float value)
