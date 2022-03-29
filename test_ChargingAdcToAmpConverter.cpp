@@ -4,7 +4,7 @@
 #include <string.h>
 #include "ChargingAdcToAmpConverter.h"
 
-unsigned int AmpValue = 0;
+int AmpValue = 0;
 TEST_CASE("To check if ADC o/p 0 is read as 0A by the converter")
 {
   REQUIRE(ConvertAdcToAmp(0, &AmpValue) == ADCToAmpConversionSucessful); /* function returns 0 indicating no error */
