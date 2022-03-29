@@ -36,7 +36,7 @@ int ConvertAdcToAmp(unsigned int ADCValue, int* CurrentInAmp)
 
 int ConvertAdcArrayToAmpArray(int* AdcArray, int* CurrentArrayInAmp, unsigned int sizeOfAdcArray)
 {
-  int arrayIndex = 0;
+  unsigned int arrayIndex = 0;
   int returnValue = 0;
   
   for(arrayIndex = 0;arrayIndex < sizeOfAdcArray;arrayIndex++)
