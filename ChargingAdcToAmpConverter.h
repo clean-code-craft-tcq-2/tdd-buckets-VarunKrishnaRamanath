@@ -1,6 +1,9 @@
 #include <stdbool.h>
 #include <string.h>
 
+#define ADCToAmpConversionSucessful      0
+#define ADCToAmpConversionNotSucessful   1
+
 #define MAX_CURRENT_SENSED_BY_ADC             10  /* Amps */
 #define MAX_NUMBER_OF_BITS_SUPPORTED_BY_ADC   12 /* Bits */
 #define MIN_VALUE_READ_BY_ADC                 0
