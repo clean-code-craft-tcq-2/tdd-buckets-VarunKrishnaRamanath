@@ -5,15 +5,16 @@
 
 int ConvertAdcToAmp(unsigned int ADCValue, unsigned int* CurrentInAmp)
 {
- int returnValue = ADCToAmpConversionSucessful;
+ int returnValue = ADCToAmpConversionNotSucessful;
  
- if(IS_GREATER_THAN_MAX_VALUE)
+ if(IS_GREATER_THAN_MAX_VALUE(ADCValue))
  {
   returnValue = ADCToAmpConversionNotSucessful;  
  }
  else
  {
   *CurrentInAmp = CONVERT_ADC_TO_AMP(ADCValue);
+   returnValue = ADCToAmpConversionSucessful;
  }
  
   return returnValue;
