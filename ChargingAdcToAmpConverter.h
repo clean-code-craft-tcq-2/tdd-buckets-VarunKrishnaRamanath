@@ -12,3 +12,4 @@
 
 
 int ConvertAdcToAmp(unsigned int ADCValue, unsigned int* CurrentInAmp);
+int ConvertAdcArrayToAmpArray(int* AdcArray, int* CurrentArrayInAmp, unsigned int sizeOfAdcArray);
