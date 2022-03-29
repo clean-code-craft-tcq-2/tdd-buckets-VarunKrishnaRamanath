@@ -36,6 +36,6 @@ TEST_CASE("To supply array of ADC values to a function and get array of CurrentI
   int expected_CurrentArrayInAmp[10] = {3, 4, 4, 6, 6, 7, 8, 9, 9, 10};
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
-  ConvertAdcArrayToAmpArray(&AdcArray, &CurrentArrayInAmp, sizeOfAdcArray);
-  REQUIRE(memcmp(CurrentArrayInAmp, expected_CurrentArrayInAmp) == 0);
+  REQUIRE(ConvertAdcArrayToAmpArray(&AdcArray, &CurrentArrayInAmp, sizeOfAdcArray) == 0); /* function returns 0 indicating no error */
+  REQUIRE(memcmp(CurrentArrayInAmp, expected_CurrentArrayInAmp) == 0); /* converted array matches with expected values */
 }
