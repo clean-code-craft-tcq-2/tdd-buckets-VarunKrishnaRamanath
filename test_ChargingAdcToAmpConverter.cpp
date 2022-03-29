@@ -51,5 +51,5 @@ TEST_CASE("After integration of BatteryChargeAnalyser, pass array of ADC values 
   /* First convert adc to amp */
   REQUIRE(ConvertAdcArrayToAmpArray(AdcArray, CurrentArrayInAmp, sizeOfAdcArray) == 0); /* function returns 0 indicating no error */
   /* Pass the array in amp to range detection function */
-  REQUIRE(strcmp(NumberOfReadingsInRange((unsigned int*)CurrentArrayInAmp, sizeOfAdcArray)), "3-4, 3\n6-10, 7\n") == 0);
+  REQUIRE(strcmp(NumberOfReadingsInRange((unsigned int*)CurrentArrayInAmp, sizeOfAdcArray), "3-4, 3\n6-10, 7\n") == 0);
 }
