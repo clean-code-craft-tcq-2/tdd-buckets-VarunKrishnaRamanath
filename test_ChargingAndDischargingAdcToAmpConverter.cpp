@@ -33,7 +33,7 @@ TEST_CASE("To check if ADC o/p 1023 or greater is read as error by the converter
 {
   int AdcOutput = 1023;
   int expectedCurrentInAmp = 0;
-  validateAdcConverter_NoError(AdcOutput, expectedCurrentInAmp);
+  validateAdcConverter_Error(AdcOutput, expectedCurrentInAmp);
 }
 
 TEST_CASE("To check if ADC o/p 511 is read as 0A by the converter")
@@ -41,4 +41,13 @@ TEST_CASE("To check if ADC o/p 511 is read as 0A by the converter")
   int AdcOutput = 511;
   int expectedCurrentInAmp = 0;
   validateAdcConverter_NoError(AdcOutput, expectedCurrentInAmp);
+}
+
+TEST_CASE(" To provide array of ADC values as input and expect array of current values as output")
+{
+  int AdcArray[10] = {414,404,660,680,345,280,780,800,210,200};
+  int expected_CurrentArrayInAmp[10] = {-3,-3,4,5,-5-7,8,8,-9,-9};
+  unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
+  
+  CheckCurrentArrayWithAdcInput(AdcArray, expected_CurrentArrayInAmp, sizeOfAdcArray);
 }
