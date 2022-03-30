@@ -33,7 +33,7 @@ TEST_CASE("To check if ADC o/p 4095 or greater is read as error by the converter
 {
   int AdcOutput = 4095;
   int expectedCurrentInAmp = 0;
-  validateAdcConverter_NoError(AdcOutput, expectedCurrentInAmp);
+  validateAdcConverter_Error(AdcOutput, expectedCurrentInAmp);
 }
 
 TEST_CASE("To check if ADC o/p 1146 is read as 3A by the converter")
