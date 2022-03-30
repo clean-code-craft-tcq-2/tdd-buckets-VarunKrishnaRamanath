@@ -17,7 +17,7 @@ static int RoundOffToNearestIntegerValue(float value)
   return IntegerVal;
 }
 
-int ConvertAdcToAmp(unsigned int ADCValue, int* CurrentInAmp)
+int ConvertAdcToAmp(int ADCValue, int* CurrentInAmp)
 {
  int returnValue = ADCToAmpConversionNotSucessful;
  
@@ -41,7 +41,7 @@ int ConvertAdcArrayToAmpArray(int* AdcArray, int* CurrentArrayInAmp, unsigned in
   
   for(arrayIndex = 0;arrayIndex < sizeOfAdcArray;arrayIndex++)
   {
-    returnValue |= ConvertAdcToAmp((unsigned int)AdcArray[arrayIndex], &CurrentArrayInAmp[arrayIndex]);
+    returnValue |= ConvertAdcToAmp(AdcArray[arrayIndex], &CurrentArrayInAmp[arrayIndex]);
   }
   
   return returnValue;
