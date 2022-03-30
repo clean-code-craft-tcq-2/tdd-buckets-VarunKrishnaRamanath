@@ -2,7 +2,7 @@
 
 #include "test/catch.hpp"
 #include <string.h>
-#include "ChargingAdcToAmpConverter.h"
+#include "AdcToAmpConverter.h"
 #include "BatteryChargeAnalyser.h"
 
 const AdcParameters AdcParameterStruct = {
