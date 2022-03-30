@@ -56,7 +56,7 @@ TEST_CASE("To supply array of ADC values to a function and get array of CurrentI
 TEST_CASE("After integration of BatteryChargeAnalyser, pass array of ADC values and expect the ranges as output")
 {
   int AdcArray[10] = {1146, 1646, 1770, 2500, 2300, 3000, 3400, 3500, 3700, 4000};
-  char* CurrentRange[100] = "3-4, 3\n6-10, 7\n";
+  char CurrentRange[100] = "3-4, 3\n6-10, 7\n";
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
   CheckRangesWithAdcInput(AdcArray, CurrentRange, sizeOfAdcArray);
