@@ -6,7 +6,7 @@ static inline void validateAdcConverter_NoError(int AdcOutput, int ExpectedCurre
   int CurrentInAmp = 0;
   
   REQUIRE(ConvertAdcToAmp(AdcOutput, &CurrentInAmp) == ADCToAmpConversionSucessful); /* function returns 0 indicating no error */
-  REQUIRE(AmpValue == ExpectedCurrentInAmp);
+  REQUIRE(CurrentInAmp == ExpectedCurrentInAmp);
 }
 
 static inline void validateAdcConverter_Error(int AdcOutput, int ExpectedCurrentInAmp)
@@ -14,7 +14,7 @@ static inline void validateAdcConverter_Error(int AdcOutput, int ExpectedCurrent
   int CurrentInAmp = 0;
   
   REQUIRE(ConvertAdcToAmp(AdcOutput, &CurrentInAmp) == ADCToAmpConversionNotSucessful); /* function returns 1 indicating error */
-  REQUIRE(AmpValue == ExpectedCurrentInAmp);
+  REQUIRE(CurrentInAmp == ExpectedCurrentInAmp);
 }
 
 static inline void CheckCurrentArrayWithAdcInput(int* AdcOutputArray, int* ExpectedCurrentArray, unsigned int sizeOfAdcArray)
