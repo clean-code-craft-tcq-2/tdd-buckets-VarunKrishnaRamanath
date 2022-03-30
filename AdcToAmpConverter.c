@@ -6,13 +6,22 @@
 static int RoundOffToNearestIntegerValue(float value)
 {
   int IntegerVal = 0;
-  if((value - (int)value) <= 0.5)
+  float Precesiondifference = value - (int)value;
+
+  if(fabs(Precesiondifference) <= 0.5)
   {
    IntegerVal = (int)value;
   }
   else
   {
-   IntegerVal = (int)value + 1;
+      if(Precesiondifference > 0)
+      {
+          IntegerVal = (int)value + 1;
+      }
+      else
+      {
+          IntegerVal = (int)value - 1;
+      }
   }
   return IntegerVal;
 }
