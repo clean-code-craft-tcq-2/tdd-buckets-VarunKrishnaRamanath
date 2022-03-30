@@ -1,11 +1,7 @@
 #include "ChargingAdcToAmpConverter.h"
 
-#define IS_GREATER_THAN_MAX_VALUE(ADCValue)  (ADCValue > MAX_VALUE_READ_BY_ADC)
-
-static float ConvertWithScaleAndOffset(unsigned int ADCValue)
-{
-  return ((float)((AdcParameterStruct.AdcConversionScale*ADCValue)/(float)(MaxValueReadByAdc)) + (float)AdcConversionOffset)
-}
+#define CONVERT_ADC_AMP(AdcValue)   ((float)((AdcParameterStruct.AdcConversionScale*(ADCValue))/(float)(AdcParameterStruct.MaxValueReadByAdc)) + (float)AdcParameterStruct.AdcConversionOffset)
+#define IS_GREATER_THAN_MAX_VALUE(ADCValue)  (ADCValue > AdcParameterStruct.MaxValueReadByAdc)
 
 static int RoundOffToNearestIntegerValue(float value)
 {
@@ -31,7 +27,7 @@ int ConvertAdcToAmp(unsigned int ADCValue, int* CurrentInAmp)
  }
  else
  {
-  *CurrentInAmp = RoundOffToNearestIntegerValue(ConvertWithScaleAndOffset(ADCValue));
+  *CurrentInAmp = RoundOffToNearestIntegerValue(CONVERT_ADC_AMP(ADCValue));
    returnValue = ADCToAmpConversionSucessful;
  }
  
