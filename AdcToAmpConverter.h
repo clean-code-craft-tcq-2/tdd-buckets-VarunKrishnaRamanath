@@ -13,6 +13,25 @@ typedef struct{
   int MaxValueReadByAdc;
 }AdcParameters;
 
+#include <math.h>
+
+static inline int GetAbsoluteValue(int value)
+{
+ return abs(value); 
+}
+
+static inline void GetAbsoluteValuesFromArray(int* Array, int* AbsArray, unsigned int sizeOfArray)
+{
+  unsigned int loop = 0;
+  
+  for(loop = 0; loop < sizeOfArray; loop++)
+  {
+    AbsArray[loop] = abs(Array[loop]);
+  }
+  
+ return; 
+}
+
 extern const AdcParameters AdcParameterStruct;
 
 int ConvertAdcToAmp(int ADCValue, int* CurrentInAmp);
