@@ -16,13 +16,13 @@ jobs:
         sudo apt-get install -y gcovr
 
     - name: build_ChargingAdcToAmp
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ChargingAdcToAmp test_ChargingAdcToAmpConverter.cpp ChargingAdcToAmpConverter.c BatteryChargeAnalyser.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ChargingAdcToAmp test_ChargingAdcToAmpConverter.cpp AdcToAmpConverter.c BatteryChargeAnalyser.c
       
     - name: run_ChargingAdcToAmp
       run: ./ChargingAdcToAmp
       
     - name: build_ChargeAndDischargeAdcToAmp
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ChargeAndDischargeAdcToAmp test_ChargingAndDischargingAdcToAmpConverter.cpp WrapperForAbsoluteCurrent.c ChargingAdcToAmpConverter.c BatteryChargeAnalyser.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ChargeAndDischargeAdcToAmp test_ChargingAndDischargingAdcToAmpConverter.cpp AdcToAmpConverter.c BatteryChargeAnalyser.c
       
     - name: run_ChargeAndDischargeAdcToAmp
       run: ./ChargeAndDischargeAdcToAmp
