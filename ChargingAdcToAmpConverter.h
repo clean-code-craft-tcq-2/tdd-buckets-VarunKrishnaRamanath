@@ -12,7 +12,7 @@ typedef struct{
   int MaxValueReadByAdc;
 }AdcParameters;
 
-extern const AdcParamters AdcParameterStruct;
+extern const AdcParameters AdcParameterStruct;
 
 int ConvertAdcToAmp(unsigned int ADCValue, int* CurrentInAmp);
 int ConvertAdcArrayToAmpArray(int* AdcArray, int* CurrentArrayInAmp, unsigned int sizeOfAdcArray);
