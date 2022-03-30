@@ -17,7 +17,17 @@ static inline void validateAdcConverter_Error(int AdcOutput, int ExpectedCurrent
   REQUIRE(AmpValue == ExpectedCurrentInAmp);
 }
 
-static inline void validateAdcConverterWithArrayOfAdcValues_NoError(int* AdcOutputArray, char* ExpectedCurrentArrayRange, unsigned int sizeOfAdcArray)
+static inline void CheckCurrentArrayWithAdcInput(int* AdcOutputArray, int* ExpectedCurrentArray, unsigned int sizeOfAdcArray)
+{
+  int CurrentArrayInAmp[sizeOfAdcArray];
+  
+  /* First convert adc to amp */
+  REQUIRE(ConvertAdcArrayToAmpArray(AdcOutputArray, CurrentArrayInAmp, sizeOfAdcArray) == ADCToAmpConversionSucessful); /* function returns 0 indicating no error */
+  /* Pass the array in amp to range detection function */
+  REQUIRE(memcmp(CurrentArrayInAmp, ExpectedCurrentArray, sizeOfAdcArray) == 0);
+}
+
+static inline void CheckRangesWithAdcInput(int* AdcOutputArray, char* ExpectedCurrentArrayRange, unsigned int sizeOfAdcArray)
 {
   int CurrentArrayInAmp[sizeOfAdcArray];
   
