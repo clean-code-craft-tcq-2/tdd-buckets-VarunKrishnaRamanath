@@ -5,7 +5,7 @@
 #include "ChargingAdcToAmpConverter.h"
 #include "BatteryChargeAnalyser.h"
 
-const AdcParamters AdcParameterStruct = {
+const AdcParameters AdcParameterStruct = {
   0,      // MinCurrentSensedByAdc in Amp
   10,     // MaxCurrentSensedByAdc in Amp
   10,     // AdcConversionScale -> Since this is single direction, maxCurrentSensedByAdc is considered as scale
