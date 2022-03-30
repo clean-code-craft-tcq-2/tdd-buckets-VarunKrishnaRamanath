@@ -46,7 +46,6 @@ TEST_CASE("To check if ADC o/p 1146 is read as 3A by the converter")
 TEST_CASE("To supply array of ADC values to a function and get array of CurrentInAmp as output")
 {
   int AdcArray[10] = {1146, 1646, 1770, 2500, 2300, 3000, 3400, 3500, 3700, 4000};
-  int CurrentArrayInAmp[10];
   int expected_CurrentArrayInAmp[10] = {3, 4, 4, 6, 6, 7, 8, 9, 9, 10};
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
@@ -57,8 +56,8 @@ TEST_CASE("To supply array of ADC values to a function and get array of CurrentI
 TEST_CASE("After integration of BatteryChargeAnalyser, pass array of ADC values and expect the ranges as output")
 {
   int AdcArray[10] = {1146, 1646, 1770, 2500, 2300, 3000, 3400, 3500, 3700, 4000};
-  int CurrentArrayInAmp[10];
+  char* CurrentRange[100] = "3-4, 3\n6-10, 7\n";
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
-  CheckRangesWithAdcInput(AdcArray,"3-4, 3\n6-10, 7\n",sizeOfAdcArray);
+  CheckRangesWithAdcInput(AdcArray, &CurrentRange,sizeOfAdcArray);
 }
