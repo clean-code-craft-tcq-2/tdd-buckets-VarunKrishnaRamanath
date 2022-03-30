@@ -5,6 +5,14 @@
 #include "ChargingAdcToAmpConverter.h"
 #include "BatteryChargeAnalyser.h"
 
+const AdcParamters AdcParameterStruct = {
+  0,      // MinCurrentSensedByAdc in Amp
+  10,     // MaxCurrentSensedByAdc in Amp
+  10,     // AdcConversionScale -> Since this is single direction, maxCurrentSensedByAdc is considered as scale
+  0,      // AdcConversionOffset
+  4094    // MaxValueReadByAdc
+};
+
 int AmpValue = 0;
 TEST_CASE("To check if ADC o/p 0 is read as 0A by the converter")
 {
