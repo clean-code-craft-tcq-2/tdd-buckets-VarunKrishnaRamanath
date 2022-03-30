@@ -1,3 +1,4 @@
+#pragma once
 #include "ChargingAdcToAmpConverter.h"
 #include "BatteryChargeAnalyser.h"
 
