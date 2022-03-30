@@ -55,7 +55,6 @@ TEST_CASE(" To provide array of ADC values as input and expect array of current 
 TEST_CASE("After integration of BatteryChargeAnalyser, pass array of ADC values and expect the ranges as output")
 {
   int AdcArray[10] = {414,404,660,680,345,280,780,800,210,200};
-  int expected_CurrentArrayInAmp[10] = {-3,-3,4,5,-5-7,8,8,-9,-9};
   char CurrentRange[100] = "3-5, 5\n7-9, 5\n";
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
