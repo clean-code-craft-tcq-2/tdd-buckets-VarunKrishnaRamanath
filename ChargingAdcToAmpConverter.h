@@ -15,5 +15,5 @@ typedef struct{
 
 extern const AdcParameters AdcParameterStruct;
 
-int ConvertAdcToAmp(unsigned int ADCValue, int* CurrentInAmp);
+int ConvertAdcToAmp(int ADCValue, int* CurrentInAmp);
 int ConvertAdcArrayToAmpArray(int* AdcArray, int* CurrentArrayInAmp, unsigned int sizeOfAdcArray);
