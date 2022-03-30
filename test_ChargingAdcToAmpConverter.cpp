@@ -59,5 +59,5 @@ TEST_CASE("After integration of BatteryChargeAnalyser, pass array of ADC values 
   char* CurrentRange[100] = "3-4, 3\n6-10, 7\n";
   unsigned int sizeOfAdcArray = sizeof(AdcArray)/sizeof(int);
   
-  CheckRangesWithAdcInput(AdcArray, &CurrentRange,sizeOfAdcArray);
+  CheckRangesWithAdcInput(AdcArray, CurrentRange, sizeOfAdcArray);
 }
