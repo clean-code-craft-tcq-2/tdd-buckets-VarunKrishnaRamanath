@@ -37,3 +37,13 @@ static inline void CheckRangesWithAdcInput(int* AdcOutputArray, char* ExpectedCu
   /* Pass the array in amp to range detection function */
   REQUIRE(strcmp(NumberOfReadingsInRange((unsigned int*)CurrentArrayInAmp, sizeOfAdcArray), ExpectedCurrentArrayRange) == 0);
 }
+
+static inline void CheckCurrentArrayWithDischargingAdcInput(int* AdcOutputArray, char* ExpectedCurrentArrayRange, unsigned int sizeOfAdcArray) /* function for Charging and dischargin sensor*/
+{
+  /* First convert adc to amp */
+  REQUIRE(ConvertAdcArrayToAmpArray(AdcOutputArray, CurrentArrayInAmp, sizeOfAdcArray) == ADCToAmpConversionSucessful); /* function returns 0 indicating no error */
+  /* next get absolute of current array */
+  GetAbsoluteValuesFromArray(CurrentArrayInAmp, CurrentArrayInAmp, sizeOfAdcArray);
+  /* Pass the array in amp to range detection function */
+  REQUIRE(strcmp(NumberOfReadingsInRange((unsigned int*)CurrentArrayInAmp, sizeOfAdcArray), ExpectedCurrentArrayRange) == 0);
+}
