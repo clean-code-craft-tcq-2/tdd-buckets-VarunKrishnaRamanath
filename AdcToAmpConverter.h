@@ -1,6 +1,7 @@
 #pragma once
 #include <stdbool.h>
 #include <string.h>
+#include <float.h>
 
 #define ADCToAmpConversionSucessful      0
 #define ADCToAmpConversionNotSucessful   1
